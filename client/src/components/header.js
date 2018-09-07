@@ -2,6 +2,13 @@ import React, {Component} from 'react';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 
 class HeaderComponent extends Component{
+	constructor(){
+    super();
+    this.state = {
+      current:'Default'
+    	}
+    }
+
 	render(){
 		return(
 			<Navbar>
@@ -11,10 +18,10 @@ class HeaderComponent extends Component{
 			    </Navbar.Brand>
 			  </Navbar.Header>
 			  <Nav>
-			    <NavItem eventKey={1} href="#">
+			    <NavItem eventKey={1} href="#" id='Home' onClick={this.props.handler}>
 			      Home
 			    </NavItem>
-			    <NavItem eventKey={2} href="#">
+			    <NavItem eventKey={2} href="#" id='Report' onClick={this.props.handler}>
 			      Report
 			    </NavItem>
 			    <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
